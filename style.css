@@ -19,13 +19,17 @@ body {
     background-color: white;
 }
 
+
 .row {
     display: flex;
-    flex-direction: column;
-    max-width: 350px;
-    margin: 0 auto;
-    height: 100vh;
-    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}
+
+.col {
+    flex: 0 1 300px;
 }
 
 .container {
@@ -47,19 +51,43 @@ body {
 
 .col__desc {
     color: var(--transparent-white);
-    padding-bottom: 2.5em;
+    padding-bottom: 3em;
 }
 
 .col__btn {
-    color: var(--bright-orange);
     background-color: var(--light-grey);
     text-decoration: none;
     padding: 1em 2em;
     border-radius: 2em;
 }
 
+.col__btn:active {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid var(--light-grey);
+}
+
+.col-1 .col__btn {
+    color: var(--bright-orange);
+}
+
+.col-2 .col__btn {
+    color: var(--dark-cyan);
+}
+
+.col-3 .col__btn {
+    color: var(--deep-cyan);
+}
+
+.col-3 .col__btn:active, 
+.col-2 .col__btn:active, 
+.col-1 .col__btn:active {
+    color: var(--light-grey);
+}
+
+
 .col-1 {
     background-color: var(--bright-orange);
+    border-radius: 1em 0 0 1em;
 }
 
 .col-2 {
@@ -68,5 +96,15 @@ body {
 
 .col-3 {
     background-color: var(--deep-cyan);
+    border-radius: 0 1em 1em 0;
 }
 
+@media only screen and (max-width: 688px) {
+    .col-1 {
+        border-radius: 1em 1em 0 0;
+    }
+
+    .col-3 {
+        border-radius: 0 0 1em 1em;
+    }
+}
